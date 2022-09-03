@@ -1,0 +1,28 @@
+<h3>Hero AddressBook</h3>
+
+<form (submit)="onSubmit()">
+    <div class="form-group">
+        <label for="empname">Name</label>
+        <input type="text" class="form-control" id="empname"
+        name="empname" required
+        [(ngModel)]="empData.empname">
+    </div>
+    <div class="form-group">
+        <label for="heroaddress">Address</label>
+        <textarea rows="4" cols="25" 
+            class="form-control" 
+            id="heroaddress"
+            name="heroaddress" 
+            placeholder="Address" 
+            [(ngModel)]="empData.empAddress"
+            required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="city">City</label>
+        <select class="form-control" id="city" name="city" [(ngModel)]="empData.empCity">
+            <option *ngFor="let cityname of listOfCity" [value]="cityname">{{cityname}}</option>
+        </select>
+    </div>
+
+    <input type="submit" value="Submit">
+</form>
